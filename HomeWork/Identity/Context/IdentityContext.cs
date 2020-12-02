@@ -1,6 +1,7 @@
 ﻿using Identity.Context.Mapping;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Identity.Context
 {
@@ -8,7 +9,8 @@ namespace Identity.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-ULMF4IC;Database=Identity;user id =sa;password=654321;");
+            
+            optionsBuilder.UseSqlServer("Server=DESKTOP-M1RS6NT;Database=Identity;Trusted_Connection=true;");
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
