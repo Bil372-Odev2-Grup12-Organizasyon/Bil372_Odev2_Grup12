@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Identity.Context.Conference>
+@model IEnumerable<Identity.Context.Conference>
 
 @{
     ViewData["Title"] = "Index";
@@ -71,9 +71,10 @@
                         @Html.DisplayFor(modelItem => item.WebSite)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.ConfID })
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ConfID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ConfID }) |
+                        @Html.ActionLink("ViewSubmission", "Index", "Submission", new { id = item.ConfID })
 
-                        @Html.ActionLink("Delete", "Delete", new { id = item.ConfID })
                     </td>
                 </tr>
             }
