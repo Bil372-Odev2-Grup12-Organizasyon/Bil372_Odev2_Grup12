@@ -1,0 +1,53 @@
+@model IEnumerable<Identity.Context.Submissions>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SubmissionID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Submission)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.prevSubmissionID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubmissionID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Submission)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.prevSubmissionID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.SubmissionID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SubmissionID, confId = item.ConfId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
