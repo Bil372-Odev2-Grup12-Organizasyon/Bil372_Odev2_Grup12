@@ -1,4 +1,4 @@
-﻿using Identity.Context.Mapping;
+using Identity.Context.Mapping;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -9,7 +9,6 @@ namespace Identity.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            
             optionsBuilder.UseSqlServer("Server=DESKTOP-M1RS6NT;Database=Identity;Trusted_Connection=true;");
         }
 
@@ -18,7 +17,7 @@ namespace Identity.Context
             builder.ApplyConfiguration(new ConferenceMap());
             builder.ApplyConfiguration(new ConferenceTagMap());
             builder.ApplyConfiguration(new SubmissionMap());
-          
+
 
             base.OnModelCreating(builder);
         }
@@ -27,7 +26,7 @@ namespace Identity.Context
         public DbSet<ConferenceTags> ConferenceTags { get; set; }
         public DbSet<UserLog> UserLogs { get; set; }
         public DbSet<Submissions> Submissions { get; set; }
-       
+
 
 
     }
