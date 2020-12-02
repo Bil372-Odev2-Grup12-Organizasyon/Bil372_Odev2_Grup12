@@ -1,0 +1,22 @@
+
+1. Visual Studio Code'u yükleyin
+2. Aşağıdaki bağlantıdan .NET CORE'u indirin (Programın çalışması için 5.0 sürümü gerekir)
+3. MongoDB'yi yükleyin
+4. NuGET'i yükleyin ve kurun
+   Bu aşama C# driver'ının MongoDB ile localhost'ta çalışması için geçerlidir
+5. C# MongoDB driver'ını yükleyin.
+  Windows için Visual Studio Code'un içerisinde yer alan proje terminalinde aşağıdaki kodu çalıştırın
+  dotnet add package MongoDB.Driver --version 2.10.0
+  Mac için aşağıdaki kodu terminale yazıp çalıştırın
+  nuget install mongoDB.Driver && nuget install mongocsharpdriver
+6. Visual Studio Code'da C# extension'ını yükleyin
+7. SQL Server'i yükleyin
+8. Github'dan indirilen dosyayı extract edin
+9. SMSS'i kurun
+10. Database'i kendi local serverınıza aktarmak için:
+  a. SMSS üzerinden Restore Database seçeneğine tıklayıp Select a device'ı seçin. GitHub'tan indirdiğiniz dosyanın içindeki Identity.bak dosyasını seçin
+  b. aspnet core migration ile GitHub'tan indirdiğiniz dosyanın HomeWork/Identity/Migrations klasöründeki dosyaları database'e aktarın
+11. İndirilen dosyayı çalıştırın
+12. localhost üzerinden ödeve ulaşabilirsiniz
+
+* Kullanıcı oluştururken seçtiğinz şifre kullanıcı adını içermemelidir.
