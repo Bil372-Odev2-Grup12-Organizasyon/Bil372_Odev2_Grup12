@@ -212,6 +212,12 @@ namespace Identity.Migrations
                     b.Property<int>("ConfId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Submission")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("prevSubmissionID")
                         .HasColumnType("int");
 
