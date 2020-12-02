@@ -1,0 +1,36 @@
+﻿@model Identity.Models.AddTagViewModel
+
+@{
+    ViewData["Title"] = "AddTag";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>AddTag</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+
+        <div class="alert-info">
+            @Model.Conference.Name
+        </div>
+
+        <form asp-action="Create" asp-controller="Admin">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="Conference.ConfID" type="hidden" />
+            <div class="form-group">
+                <label asp-for="ConferenceTag" class="control-label"></label>
+                <input asp-for="ConferenceTag" class="form-control" />
+                <span asp-validation-for="ConferenceTag" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" asp-controller="Conference">Back to List</a>
+</div>
+

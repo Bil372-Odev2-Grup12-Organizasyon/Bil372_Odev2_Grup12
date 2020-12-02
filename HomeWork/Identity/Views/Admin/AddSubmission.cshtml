@@ -1,0 +1,36 @@
+﻿@model Identity.Models.AddSubmissionViewModel
+
+@{
+    ViewData["Title"] = "AddSubmission";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>AddSubmission</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddSubmission">
+
+            <input asp-for="Conference.ConfID" type="hidden" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Submission" class="control-label"></label>
+                <input asp-for="Submission" class="form-control" />
+                <span asp-validation-for="Submission" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="prevSubmission" class="control-label"></label>
+                <input asp-for="prevSubmission" class="form-control" />
+                <span asp-validation-for="prevSubmission" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" asp-controller="Conference">Back to List</a>
+</div>
+
