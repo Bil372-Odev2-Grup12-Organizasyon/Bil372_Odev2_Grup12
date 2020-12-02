@@ -50,6 +50,7 @@ namespace Identity.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateUser(UserUpdateViewModel model)
         {
             if (ModelState.IsValid)
